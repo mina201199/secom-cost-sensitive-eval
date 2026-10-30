@@ -302,8 +302,8 @@ def test_drop_correlated_removes_duplicated_sensors_when_enabled(cfg):
     """`corr_threshold` 預設是 null（不啟用），但這個選項必須是能用的。
 
     原本 DropCorrelated 沒有任何測試，而設定檔又永遠不啟用它 —— 那就是一段
-    沒人驗證過的死碼。面試官問「這個選項你試過嗎」是很自然的問題，
-    所以要嘛刪掉、要嘛測起來。這裡選擇測起來。
+    沒人驗證過的死碼。設定檔既然提供這個選項，就要嘛刪掉、要嘛測起來。
+    這裡選擇測起來。
     """
     import copy
 

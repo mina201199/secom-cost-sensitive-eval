@@ -267,7 +267,7 @@ def plot_drift(drift_df: pd.DataFrame, out_dir: Path) -> Path:
 
 
 def plot_split_timeline(split, out_dir: Path) -> Path:
-    """時序切分示意圖。用來向面試官證明你沒有隨機切分。"""
+    """時序切分示意圖。用來呈現 train / val / test 依時間先後切分，沒有隨機打散。"""
     fig, ax = plt.subplots(figsize=(6.6, 2.5))
     for name, color in (("train", TEAL), ("val", GREY), ("test", COPPER)):
         ts = getattr(split, f"ts_{name}")

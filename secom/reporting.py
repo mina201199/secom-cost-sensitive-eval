@@ -240,7 +240,7 @@ def _uncertainty_lines(report: dict, cfg) -> list[str]:
     """統計不確定性（B 層）。
 
     這一節存在的理由：上一版只給「四折節省比例的中位數」。四個數字的中位數不是
-    統計量，它連方向都保證不了。面試會問「你怎麼知道這不是雜訊」，這一節就是答案。
+    統計量，它連方向都保證不了。這一節回答「怎麼知道這不是雜訊」。
     """
     from .stats import required_positives_for_auc
 

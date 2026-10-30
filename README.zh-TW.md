@@ -4,9 +4,9 @@
 
 [![CI](https://github.com/mina201199/secom-cost-sensitive-eval/actions/workflows/ci.yml/badge.svg)](https://github.com/mina201199/secom-cost-sensitive-eval/actions/workflows/ci.yml)
 
-**▶ [互動試算頁](https://mina201199.github.io/secom-cost-sensitive-eval/)** — 不需安裝，點開就能改成本與產能假設看策略怎麼變
+**▶ [互動試算頁](docs/index.html)**（`docs/index.html`）— 不需安裝；GitHub 上只會顯示 HTML 原始碼，請下載後用瀏覽器開啟，就能改成本與產能假設看策略怎麼變
 
-[![30 秒 demo 影片](docs/demo-poster.png)](https://mina201199.github.io/secom-cost-sensitive-eval/demo.mp4)
+[![30 秒 demo 影片](docs/demo-poster.png)](docs/demo.mp4)
 
 *30 秒 demo：改成本假設、加上產能限制，再看滾動回測 18 個配置沒有一個跨過門檻。*
 
@@ -204,7 +204,7 @@ streamlit run app/streamlit_app.py
 - `reports/metrics/scored_holdout.json`：驗證／測試窗的標籤與校準後機率。儀表板只要 y 與 p 兩個陣列，所以模型與資料不必進版控。
 - `app/streamlit_app.py`：互動試算。主結論固定置頂、直接讀 `backtest.json` 的 dominance，避免「報告說輸、儀表板說贏」的自相矛盾。
 - `scripts/06_build_pages.py`：把兩個 JSON 烘成零依賴靜態頁。網址從 `pyproject.toml` 讀出來寫進 HTML，改 repo 名不必手改前端。
-- `docs/index.html`：GitHub Pages 的互動試算頁，由 06 產生並進版控。純前端，點連結就能用。
+- `docs/index.html`：互動試算頁，由 06 產生並進版控。純前端，下載後用瀏覽器開啟即可。
 - `tests/`：標籤隔離、前處理隔離、門檻選擇、零 fail、產能、保守策略退化、校準排序不變性、SQL 與漂移的回歸測試。另外三支守文件本身：`test_stats.py` 用解析解釘住 bootstrap、置換檢定與檢定力，`test_documented_counts.py` 讓文件寫的數量無法過期，`test_architecture_diagram.py` 讓架構圖無法指向不存在的檔案。
 - `.github/workflows/ci.yml`：ruff 加全套測試。CI 會下載 UCI 原始檔 —— 76 個測試裡有 13 個需要資料，而那 13 個正好是全部的洩漏防護測試，沒有資料的 CI 只是一個綠色徽章。
 

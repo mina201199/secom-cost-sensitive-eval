@@ -4,9 +4,9 @@
 
 [![CI](https://github.com/mina201199/secom-cost-sensitive-eval/actions/workflows/ci.yml/badge.svg)](https://github.com/mina201199/secom-cost-sensitive-eval/actions/workflows/ci.yml)
 
-**▶ [Interactive cost explorer](https://mina201199.github.io/secom-cost-sensitive-eval/)** — no install; change the cost and capacity assumptions and watch the policy respond
+**▶ [Interactive cost explorer](docs/index.html)** (`docs/index.html`) — no install; GitHub shows HTML files as source, so download the file and open it in a browser, then change the cost and capacity assumptions and watch the policy respond
 
-[![30-second demo video](docs/demo-poster.png)](https://mina201199.github.io/secom-cost-sensitive-eval/demo.mp4)
+[![30-second demo video](docs/demo-poster.png)](docs/demo.mp4)
 
 *30-second demo (Traditional Chinese captions): change the cost assumptions, add a capacity cap, then see the rolling backtest where none of the 18 configurations clears the bar.*
 

@@ -103,9 +103,13 @@ def test_docs_footer_links_are_generated_not_handwritten():
     assert "executive_summary.md" in block, "footer 少了報告連結"
 
 
-def test_readme_links_to_the_pages_demo(urls):
-    """兩份 README 的最上方都要有可點的 demo 連結 —— 這是整個部署的目的。"""
+def test_readme_links_to_the_local_demo():
+    """兩份 README 的最上方都要有可點的 demo 連結。
+
+    repo 改為 private 後 GitHub Pages 已無法存取，所以改指向 repo 內的
+    docs/index.html；用相對路徑，連結才不會再跟著外部網址一起失效。
+    """
     for rel in ("README.md", "README.zh-TW.md"):
         head = "\n".join(_read(rel).split("\n")[:8])
-        assert urls["Homepage"] in head, f"{rel} 前八行沒有 Pages demo 連結"
+        assert "](docs/index.html)" in head, f"{rel} 前八行沒有 docs/index.html 的 demo 連結"
         assert "badge.svg" in head, f"{rel} 前八行沒有 CI 徽章"
